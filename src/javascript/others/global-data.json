@@ -1,0 +1,189 @@
+{
+  "appData":{
+    "pagesData": {
+      "Home": {
+        "title": "Inicio"
+      }
+    },
+    "menuRoutes": [
+      {
+        "route": "/master/utilidadDia",
+        "routeName": "utilidadDia",
+        "routeLabel": "Utilidad hoy",
+        "parentKey": "utilityMenu"
+      }
+    ]
+  },
+  "catalogos":{
+    "productos": {
+      "categoriasFiltro": [
+        {
+          "label": "Todas",
+          "value": null
+        },
+        {
+          "label": "Videojuegos",
+          "value": "Videojuegos"
+        },
+        {
+          "label": "Dulces",
+          "value": "Dulces"
+        },
+        {
+          "label": "Computo",
+          "value": "Computo"
+        },
+        {
+          "label": "Celular",
+          "value": "Celular"
+        },
+        {
+          "label": "Sublimado",
+          "value": "Sublimado"
+        }
+      ],
+      "categorias": [
+        {
+          "label": "Videojuegos",
+          "value": "Videojuegos"
+        },
+        {
+          "label": "Dulces",
+          "value": "Dulces"
+        },
+        {
+          "label": "Computo",
+          "value": "Computo"
+        },
+        {
+          "label": "Celular",
+          "value": "Celular"
+        },
+        {
+          "label": "Sublimado",
+          "value": "Sublimado"
+        }
+      ],
+      "descuentoOptions": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "10%",
+          "value": 10
+        },
+        {
+          "label": "20%",
+          "value": 20
+        },
+        {
+          "label": "30%",
+          "value": 30
+        },
+        {
+          "label": "40%",
+          "value": 40
+        },
+        {
+          "label": "50%",
+          "value": 50
+        },
+        {
+          "label": "60%",
+          "value": 60
+        },
+        {
+          "label": "70%",
+          "value": 70
+        },
+        {
+          "label": "80%",
+          "value": 80
+        },
+        {
+          "label": "90%",
+          "value": 90
+        }
+      ]
+    },
+    "home": {
+      "textColors": [
+        {
+          "label": "Negro",
+          "value": "#474747"
+        },
+        {
+          "label": "Azul",
+          "value": "#2493fa"
+        },
+        {
+          "label": "Morado",
+          "value": "#8a57e9"
+        },
+        {
+          "label": "Verde",
+          "value": "#3ab415"
+        },
+        {
+          "label": "Amarillo",
+          "value": "#ffeb39"
+        },
+        {
+          "label": "Naranja",
+          "value": "#ff9100"
+        },
+        {
+          "label": "Rosa",
+          "value": "#f4a4ff"
+        },
+        {
+          "label": "Rojo",
+          "value": "#ff4d4f"
+        },
+        {
+          "label": "Gris",
+          "value": "#8b8b8b"
+        },
+        {
+          "label": "Blanco",
+          "value": "#ffffff"
+        }
+      ]
+    },
+    "estadosMex": [
+      { "label": "AGUASCALIENTES", "value": "AGUASCALIENTES" },
+      { "label": "BAJA CALIFORNIA",  "value": "BAJA CALIFORNIA" },
+      { "label": "BAJA CALIFORNIA SUR", "value": "BAJA CALIFORNIA SUR" },
+      { "label": "CHIHUAHUA", "value": "CHIHUAHUA" },
+      { "label": "CHIAPAS", "value": "CHIAPAS" },
+      { "label": "CAMPECHE", "value": "CAMPECHE" },
+      { "label": "CIUDAD DE MEXICO", "value": "CIUDAD DE MEXICO" },
+      { "label": "COAHUILA", "value": "COAHUILA" },
+      { "label": "COLIMA", "value": "COLIMA" },
+      { "label": "DURANGO", "value": "DURANGO" },
+      { "label": "GUERRERO", "value": "GUERRERO" },
+      { "label": "GUANAJUATO", "value": "GUANAJUATO" },
+      { "label": "HIDALGO", "value": "HIDALGO" },
+      { "label": "JALISCO", "value": "JALISCO" },
+      { "label": "MICHOACAN", "value": "MICHOACAN" },
+      { "label": "ESTADO DE MEXICO", "value": "ESTADO DE MEXICO" },
+      { "label": "MORELOS", "value": "MORELOS" },
+      { "label": "NAYARIT", "value": "NAYARIT" },
+      { "label": "NUEVO LEON",  "value": "NUEVO LEON" },
+      { "label": "OAXACA", "value": "OAXACA" },
+      { "label": "PUEBLA", "value": "PUEBLA" },
+      { "label": "QUINTANA ROO",  "value": "QUINTANA ROO" },
+      { "label": "QUERETARO", "value": "QUERETARO" },
+      { "label": "SINALOA", "value": "SINALOA" },
+      { "label": "SAN LUIS POTOSI", "value": "SAN LUIS POTOSI" },
+      { "label": "SONORA", "value": "SONORA" },
+      { "label": "TABASCO", "value": "TABASCO" },
+      { "label": "TLAXCALA", "value": "TLAXCALA" },
+      { "label": "TAMAULIPAS", "value": "TAMAULIPAS" },
+      { "label": "VERACRUZ", "value": "VERACRUZ" },
+      { "label": "YUCATAN", "value": "YUCATAN" },
+      { "label": "ZACATECAS", "value": "ZACATECAS" } 
+    ]
+  }
+}
