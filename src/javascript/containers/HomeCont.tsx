@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import Home from 'Comp/Home';
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-function HomeCont() {
+function HomeCont() : React.ReactElement {
   const [showList, setShowList] = useState(false);
   function handleclick () {
     setShowList(!showList);
     console.log('cambio showList', showList);
-  };
+  }
 
   return (
     <>

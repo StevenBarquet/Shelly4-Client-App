@@ -1,15 +1,14 @@
 // ---Dependencys
 import React from 'react';
-// ---Components
-import ImageExample from 'Comp/ImageExample';
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-function ImageExCont() {
+const Banner = props => {
+  const { srcImg } = props;
   return (
-    <>
-      <ImageExample />
-    </>
+    <div>
+      <img src={srcImg} width="100%" alt="shelly" />
+    </div>
   );
-}
+};
 
-export default ImageExCont;
+export default Banner;

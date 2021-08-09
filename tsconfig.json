@@ -36,6 +36,7 @@
       "Others/*": ["./src/javascript/others/*"],
       "Actions/*": ["./src/javascript/reduxActions/*"],
       "@Reducers/*": ["./src/javascript/reduxReducers/*"],
+      "@Declarations": ["./src/javascript/declarations.d.ts"],
       "Reducers": ["./src/javascript/reduxReducers"],
       "Types": ["./src/javascript/reduxTypes"],
       "Images/*": ["./src/images/*"]

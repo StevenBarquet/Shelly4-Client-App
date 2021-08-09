@@ -17,6 +17,7 @@ module.exports = {
       Actions: path.resolve(__dirname, '../src/javascript/reduxActions'),
       Reducers: path.resolve(__dirname, '../src/javascript/reduxReducers'),
       '@Reducers': path.resolve(__dirname, '../src/javascript/reduxReducers'),
+      '@Declarations': path.resolve(__dirname, '../src/javascript/declarations.d.ts'),
       Types: path.resolve(__dirname, '../src/javascript/reduxTypes'),
       Images: path.resolve(__dirname, '../src/images')
     }
