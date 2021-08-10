@@ -4,7 +4,7 @@ import { Skeleton, Card, Avatar } from 'antd';
 // ------------------------------------------ COMPONENT-----------------------------------------
 const { Meta } = Card;
 
-function LazyBanner() {
+function LazyBanner(): React.ReactElement {
   return (
     <Card style={{ width: '100%', marginTop: 16 }}>
       <Skeleton loading avatar active>

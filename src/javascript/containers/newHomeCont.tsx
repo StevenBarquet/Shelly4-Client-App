@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 // ---Redux
 import { useSelector, useDispatch } from 'react-redux';
-import { getPublicHomeAction } from 'Actions/home';
+import { saveHomeData } from 'Actions/home';
 import { updateLoading } from 'Actions/appInfo';
 // ---Components
 import DinamicCarousel from 'Comp/Home/DinamicCarousel';
@@ -25,7 +25,7 @@ function HomeCont() {
   const { isMovil } = useSelector(reducers => reducers.appInfoReducer);
   // Redux Actions
   const dispatchR = useDispatch();
-  const updateHomeReducer = data => dispatchR(getPublicHomeAction(data));
+  const updateHomeReducer = data => dispatchR(saveHomeData(data));
   const isLoading = flag => dispatchR(updateLoading(flag));
   const { main, sub } = title;
   useEffect(() => getHomeData(), []);

@@ -5,3 +5,7 @@ export declare global {
   
   module '*.png';
 }
+
+export type RandObj = { [s: string]: unknown; }
+
+export type RandArray = any[] | Array<unknown>

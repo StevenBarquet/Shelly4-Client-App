@@ -11,11 +11,15 @@ import {
 const { Step } = Steps;
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-const BuySteps = () => {
+function BuySteps () : React.ReactElement {
   return (
-    <React.Fragment>
+    <>
       <h4 className="steps-title">
-        En <span>4</span> sencillos pasos
+        En 
+        {' '}
+        <span>4</span>
+        {' '}
+        sencillos pasos
       </h4>
       <Steps>
         <Step
@@ -43,8 +47,8 @@ const BuySteps = () => {
           icon={<InboxOutlined />}
         />
       </Steps>
-    </React.Fragment>
+    </>
   );
-};
+}
 
 export default BuySteps;
