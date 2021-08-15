@@ -6,7 +6,7 @@ import ProductBoxModel from 'Comp/Home/ProductBoxModel';
 import ProductBoxModelPromo from 'Comp/Home/ProductBoxModelPromo';
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-function Destacados() {
+function Destacados() : React.ReactElement {
   return (
     <div className="destacados-cont">
       <h1>Destacados</h1>

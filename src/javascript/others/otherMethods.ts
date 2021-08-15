@@ -104,8 +104,8 @@ export const arrayWithoutIndex = (array: RandArray, skipIndex: number) : RandArr
   return newArray;
 };
 
-export const arrayElementSustitution = (array, elementIndex, newElement) => {
-  let newArray = [];
+export const arrayElementSustitution = (array: RandArray, elementIndex: number, newElement: RandObj | number | string ): RandArray => {
+  let newArray : RandArray = [];
   array.forEach((element, index) => {
     if (index === elementIndex) {
       newArray = [...newArray, newElement];
@@ -116,7 +116,7 @@ export const arrayElementSustitution = (array, elementIndex, newElement) => {
   return newArray;
 };
 
-export const getOneParam = cadena => {
+export const getOneParam = (cadena: string) : string => {
   // obtiene el param de una url cuando sólo existe 1
   const indexStart = cadena.search(':');
 
@@ -127,7 +127,7 @@ export const getOneParam = cadena => {
   return '';
 };
 
-export const getStringKey = cadena => {
+export const getStringKey = (cadena: string): string => {
   // obtiene el key de un string como "key: value"
   const indexFinish = cadena.search(':');
 
@@ -138,12 +138,12 @@ export const getStringKey = cadena => {
   return '';
 };
 
-export const isId = cadena => {
+export const isId = (cadena: string): boolean => {
   // regex valida una palabra continua que sólo puede contener letras numeros y '-'
   return /^[0-9a-fA-F]{24}$/.test(cadena);
 };
 
-export function ignoreArgs(someObj, args) {
+export function ignoreArgs(someObj: RandObj, args: Array<string>) : RandObj {
   const keys = Object.keys(someObj);
   const values = Object.values(someObj);
   let newData = {};
@@ -160,7 +160,7 @@ export function ignoreArgs(someObj, args) {
   });
   return newData;
 }
-export function selectArgs(someObj, args) {
+export function selectArgs(someObj: RandObj, args: Array<string>): RandObj {
   const keys = Object.keys(someObj);
   const values = Object.values(someObj);
   let newData = {};
@@ -178,7 +178,7 @@ export function selectArgs(someObj, args) {
   return newData;
 }
 
-export function genRandomString(length) {
+export function genRandomString(length: number) : string {
   let result = '';
   const characters =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -189,62 +189,39 @@ export function genRandomString(length) {
   return result;
 }
 
-export function removeNullProperties(obj) {
+export function removeNullProperties(obj: RandObj) : RandObj {
   Object.keys(obj).forEach(key => {
     const value = obj[key];
-    const hasProperties = value && Object.keys(value).length > 0;
+    const hasProperties = value && Object.keys(<RandObj>value).length > 0;
     if (value === null || value === undefined) {
       delete obj[key];
     } else if (typeof value !== 'string' && hasProperties) {
-      removeNullProperties(value);
+      removeNullProperties(<RandObj> value);
     }
   });
   return obj;
 }
-export function removeEmptyAndNull(obj) {
+export function removeEmptyAndNull(obj: RandObj) : RandObj {
   Object.keys(obj).forEach(key => {
     const value = obj[key];
-    const hasProperties = value && Object.keys(value).length > 0;
+    const hasProperties = value && Object.keys(<RandObj>value).length > 0;
     if (value === null || value === undefined || value === '') {
       delete obj[key];
     } else if (typeof value !== 'string' && hasProperties) {
-      removeNullProperties(value);
+      removeNullProperties(<RandObj>value);
     }
   });
   return obj;
 }
-export function removeBlankProperties(obj) {
+export function removeBlankProperties(obj: RandObj) : RandObj {
   Object.keys(obj).forEach(key => {
     const value = obj[key];
-    const hasProperties = value && Object.keys(value).length > 0;
+    const hasProperties = value && Object.keys(<RandObj>value).length > 0;
     if (value === '') {
       delete obj[key];
     } else if (typeof value !== 'string' && hasProperties) {
-      removeBlankProperties(value);
+      removeBlankProperties(<RandObj>value);
     }
   });
-  return obj;
-}
-
-export function cloneObj(obj) {
-  // console.log('cloneObj original: ', obj);
-  let clone = [];
-  if (Object.prototype.toString.call(obj) === '[object Array]') {
-    for (let i = 0; i < obj.length; i++) clone[i] = obj[i].clone();
-
-    return clone;
-  }
-
-  if (typeof obj === 'object') {
-    clone = {};
-    const keys = Object.keys(obj);
-    const values = Object.values(obj);
-    keys.forEach((element, index) => {
-      clone[element] = values[index];
-      // console.log('building clone...', clone);
-    });
-
-    return clone;
-  }
   return obj;
 }

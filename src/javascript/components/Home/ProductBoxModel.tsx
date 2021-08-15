@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
 // --CommonComps
-import FitImg from 'CommonComps/FitImg';
+import FitImg from 'Utils/FitImg';
 // --Others
-import { priceFormat } from 'Others/otherMethods';
+// import { priceFormat } from 'Others/otherMethods';
 
 const mockProd = {
   _id: 'some text',
@@ -20,7 +20,7 @@ const mockProd = {
 };
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-function ProductBoxModel() {
+function ProductBoxModel() : React.ReactElement {
   const [state, setState] = useState({
     promo: 0,
     specialSpan: 10,
@@ -30,11 +30,11 @@ function ProductBoxModel() {
     _id,
     marca,
     modelo,
-    type,
-    precio,
+    // type,
+    // precio,
     cover,
-    shortMicro,
-    disponibles
+    // shortMicro,
+    // disponibles
   } = mockProd;
   return (
     <Col align="middle" xs={24} sm={24} lg={8}>
