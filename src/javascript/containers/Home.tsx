@@ -98,7 +98,7 @@ function Home() : ReactElement {
       <DinamicCarousel isMovil={isMovil} banners={banners} />
       <div className="home-container">
         <p>{paragraph || 'Cargando...'}</p>
-        <Destacados />
+        <Destacados productsData={productsData} />
         <BuySteps />
         <ButtonProd />
       </div>

@@ -2,27 +2,28 @@
 import React from 'react';
 import { Row } from 'antd';
 // ---Components
-import ProductBoxModel from 'Comp/Home/ProductBoxModel';
-import ProductBoxModelPromo from 'Comp/Home/ProductBoxModelPromo';
+import ProductBox from 'Comp/Home/ProductBox';
+// ---Types
+import { Product } from '@Reducers/home/customTypes';
 
+
+// ------------------------------------------ TYPES-----------------------------------------
+interface Props {
+  productsData: Array<Product>;
+}
 // ------------------------------------------ COMPONENT-----------------------------------------
-function Destacados() : React.ReactElement {
-  return (
-    <div className="destacados-cont">
-      <h1>Destacados</h1>
-      <Row>
-        <ProductBoxModel />
-        <ProductBoxModelPromo />
-        <ProductBoxModel />
-        <ProductBoxModel />
-        <ProductBoxModelPromo />
-        <ProductBoxModel />
-        <ProductBoxModel />
-        <ProductBoxModelPromo />
-        <ProductBoxModel />
-      </Row>
-    </div>
-  );
+function Destacados(props: Props) : React.ReactElement | null {
+  const { productsData } = props
+  if(productsData && productsData.length> 0)
+    return (
+      <div className="destacados-cont">
+        <h1>Destacados</h1>
+        <Row>
+          {productsData.map( producto => <ProductBox key={producto._id} producto={producto} />)}
+        </Row>
+      </div>
+    );
+  return null
 }
 
 export default Destacados;

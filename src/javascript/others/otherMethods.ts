@@ -225,3 +225,11 @@ export function removeBlankProperties(obj: RandObj) : RandObj {
   });
   return obj;
 }
+
+export function getWordsArray(str: string) : Array<string> {
+  return str.split(' ');
+}
+
+export function makeWordsArray(str: Array<string>) : string {
+  return str.join(' ');
+}
