@@ -1,7 +1,7 @@
 // ---Dependencys
 import React from 'react';
 // ---Components
-import HomeCont from 'Cont/HomeCont';
+import Home from 'Cont/Home';
 // ---Handle html headers
 import CustomHelmet from 'CComps/CustomHelmet';
 
@@ -10,7 +10,7 @@ const HomePage = () : React.ReactElement => {
   return (
     <>
       <CustomHelmet pageName="HomePage" />
-      <HomeCont />
+      <Home />
     </>
   );
 };

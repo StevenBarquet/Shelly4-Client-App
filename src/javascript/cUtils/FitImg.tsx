@@ -6,7 +6,7 @@ interface Props {
   srcImg: string;
   estilo: string;
   alt: string;
-  onClick: ()=> any;
+  onClick?: ()=> any;
 }
 
 interface imgJSX {

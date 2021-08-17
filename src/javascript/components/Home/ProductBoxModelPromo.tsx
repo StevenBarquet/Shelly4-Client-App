@@ -1,11 +1,9 @@
 // ---Dependencys
-import React, { useState } from 'react';
+import React from 'react';
 import { Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
 // ---Components
-import FitImg from 'CommonComps/FitImg';
-// --Others
-import { priceFormat } from 'Others/otherMethods';
+import FitImg from 'Utils/FitImg';
 
 const mockProd = {
   _id: 'some text',
@@ -20,24 +18,19 @@ const mockProd = {
 };
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-function ProductBoxModelPromo() {
-  const [state, setState] = useState({
-    promo: 0,
-    specialSpan: 10,
-    priceSpan: 10
-  });
+function ProductBoxModelPromo() : React.ReactElement {
   const {
     _id,
     marca,
     modelo,
-    type,
-    precio,
+    // type,
+    // precio,
     cover,
-    shortMicro,
-    disponibles
+    // shortMicro,
+    // disponibles
   } = mockProd;
   return (
-    <Col align="middle" xs={24} sm={24} lg={8}>
+    <Col xs={24} sm={24} lg={8}>
       <Link to={'/item=' + _id}>
         <div className="product-box-container">
           <FitImg
@@ -47,7 +40,9 @@ function ProductBoxModelPromo() {
           />
           <div className="product-box-title-container">
             <h5>
-              Nintendo Switch <span>Lite</span>
+              Nintendo Switch 
+              {' '}
+              <span>Lite</span>
             </h5>
           </div>
           <div className="product-box-price-container">

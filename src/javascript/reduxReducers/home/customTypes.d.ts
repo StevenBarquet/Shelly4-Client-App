@@ -1,4 +1,5 @@
 interface Banner {
+  _id: string;
   imgDesk: string;
   imgMovil: string;
   link?: string;
@@ -7,7 +8,7 @@ interface Banner {
   visible: boolean
 }
 
-interface Products {
+export interface Products {
   _id: string;
   productID: string;
   sortIndex: number;
