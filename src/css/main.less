@@ -129,7 +129,7 @@ h1:before, h1:after {
     width: 50%;
     height: 1px;
     content: '\a0';
-    background-color: @colorSecundaryText;
+    background-color: @colorLightDark;
     margin-left: 1.7%;
 }
 h1:before {
@@ -140,45 +140,7 @@ h1:before {
     background-color: #ccc;
   }
 }
-//-------------------------------------------------------PRODUCTOS------------------------------------------------
-.orden-container{
-  width: 90%;
-  margin: 15px 5% 25px 5%;
-  padding: 20px;
-  h4{
-    color: @colorPrimaryText;
-    font-size: 30px;
-    text-align: center;
-    margin-top: 50px;
-  }
-}
-.products-cont{
-  margin: 45px auto 35px auto;
-  width: 90%;
-}
-.items-comtainer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product-box-container{
-  background-color: #ffffff;
-  border-radius: 3px;
-  margin: 25px 0px 0px 0px;
-  font-size: 16px;
-  width: 300px;
-  height: 350px;
-}
-.product-box-img-container{
-  margin: 0px auto 0px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  width: 300px;
-  height: 230px;
-}
+//--------------------------------------------------DESCUENTO/PROMO-------------------------------------------
 .product-box-promo{
   span{
     color: @colorPrimaryText;
@@ -199,6 +161,7 @@ h1:before {
   // box model and position for promo
   display: block;
   padding-top: 16px;
+  padding-left: 8px;
   width: 60px;
   height: 60px;
   background: rgb(0,212,255);
@@ -206,79 +169,74 @@ h1:before {
   border-radius: 50%;
 
   position: absolute;
-  top: 10px;
-  right: 50px;
+  top: 15px;
+  right: 100px;
 }
-.product-box-title-container{
-  display: block;
-  color: @color_darkSemiLigth;
-  width: 100%;
-  height: 30px;
+//-------------------------------------------------------ITEM BOX------------------------------------------------
+.product-box-img-container{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: @colorWhite;
+  width: 300px;
+  height: 230px;
+}
+.product-box-container{
+  background-color: @colorWhite;
+  border-radius: 3px;
+  margin: 25px 0px 0px 0px;
+  font-size: 16px;
+  width: 300px;
+  height: 350px;
   h5{
-    font-size: 19px;
-    color: rgb(61, 61, 61);
+    display: block;
+    width: 85%;
+    margin: 0px auto 0px auto;
+    height: 30px;
+    font-size: 17px;
+    color: @colorDark;
+    /* Required for text-overflow to do anything */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     span{
       font-weight: bold;
     }
   }
-  /* Required for text-overflow to do anything */
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.product-box-price-container{
-  display: block;
-  color: @color_darkSemiLigth;
-  width: 100%;
-  height: 25px;
-  font-size: 15px;
-}
-.product-box-before{
-  color: #fa9d24;
-  text-decoration: line-through;
-  text-decoration-color: #fa9d24;
+  section{
+    display: block;
+    color: @colorDarkLigth;
+    text-align: center;
+    width: 100%;
+    height: 25px;
+    font-size: 15px;
+    aside{
+      color: @colorPrimary;
+      text-decoration: line-through;
+      text-decoration-color: @colorPrimary;
+    }
+  }
 }
 .product-box-avilable-container{
   font-size: 14px;
   display: block;
-  color: @color_darkSemiLigth;
+  text-align: center;
+  color: @colorDarkLigth;
   width: 100%;
   height: 25px;
+  span{
+    color: @colorDarkLigth;
+    font-weight: bold;
+  }
 }
 .product-box-belt{
   display: block;
-  color: #ffffff;
-  background-color:  rgba(114, 114, 114, 0.8);
-  border: 1px solid #83e428;
+  color: @colorLight;
+  text-align: center;
+  background-color: @colorDarkLighter;
+  border: 1px solid @colorFive;
   border-radius: 10px;
   margin: 8px 5px 0px 5px;
-}
-.search-item-special{
-  color: rgb(184, 49, 161);
-  font-weight: bold;
-  text-align: left;
-  font-size: 18px;
-  margin: 10px;
-}
-.search-item-price{
-  color: @color_darkSemiLigth;
-  text-align: right;
-  margin: 10px;
-  font-size: 19px;
-  &-promo{
-    text-decoration: line-through;
-    color: @color_darkSemiLigth;
-    text-align: right;
-    margin: 10px;
-    font-size: 19px;
-  }
-}
-.search-item-left{
-  color: rgb(184, 49, 161);
-  font-size: 19px;
-  position: relative;
-  top: -20px;
-  span{
-    color: rgb(48, 44, 44);
-  }
 }

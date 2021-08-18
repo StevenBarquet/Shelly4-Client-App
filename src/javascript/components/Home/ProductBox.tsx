@@ -30,6 +30,50 @@ function TitleParse(props: { someTitle: string}) {
     </>
   )
 }
+
+function PriceBox (props: {precioOnline: number, descuento: number}) {
+  const { precioOnline, descuento} = props
+
+  function getExtraPrice(price: number) : number {
+    return price*100/(100-descuento)
+  }
+
+  if(descuento && descuento>0)
+    return(
+      <>
+        <Col span={12}>
+          <aside>
+            Antes:
+            {` ${priceFormat(getExtraPrice(precioOnline))}`}
+          </aside>
+        </Col>
+        <Col span={12}>
+          Ahora:
+          {` ${priceFormat(precioOnline)}`}
+        </Col>
+      </>
+    )
+  return (
+    <>
+      <Col span={24}>
+        Ahora:
+        {` ${priceFormat(precioOnline)}`}
+      </Col>
+    </>
+  )
+}
+
+function PromoBox (props: { descuento: number }) {
+  const { descuento } = props
+  if(descuento && descuento > 0)
+    return(
+      <div className="product-box-promo">
+        <span>{`-${descuento}%`}</span>
+      </div>
+    )
+  return null
+  
+}
 // ------------------------------------------ TYPES-----------------------------------------
 interface Props {
   producto: Product;
@@ -56,30 +100,21 @@ function ProductBox(props: Props) : React.ReactElement {
             estilo="product-box-img-container"
             alt={nombre}
           />
-          <div className="product-box-title-container">
-            <h5>
-              <TitleParse someTitle={nombre} />
-            </h5>
-          </div>
-          <div className="product-box-price-container">
+          <h5>
+            <TitleParse someTitle={nombre} />
+          </h5>
+          <section>
             <Row>
-              <Col span={24}>
-                Ahora:
-                {` ${priceFormat(precioOnline)}`}
-              </Col>
+              <PriceBox precioOnline={precioOnline} descuento={descuento} />
             </Row>
-          </div>
+          </section>
           <div className="product-box-avilable-container">
             Disponibles:
-            {` ${disponibles}`}
+            <span>{` ${disponibles}`}</span>
           </div>
           <div className="product-box-belt">{categoria[0]}</div>
         </div>
-        {descuento && descuento>0 && (
-          <div className="product-box-promo">
-            <span>{`-${descuento}%`}</span>
-          </div>
-        )}
+        <PromoBox descuento={descuento} />
       </Link>
     </Col>
   );
