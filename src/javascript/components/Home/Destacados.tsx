@@ -9,7 +9,7 @@ import { Product } from '@Reducers/home/customTypes';
 
 // ------------------------------------------ TYPES-----------------------------------------
 interface Props {
-  productsData: Array<Product>;
+  productsData?: Array<Product>;
 }
 // ------------------------------------------ COMPONENT-----------------------------------------
 function Destacados(props: Props) : React.ReactElement | null {

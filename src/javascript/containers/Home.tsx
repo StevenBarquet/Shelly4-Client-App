@@ -20,24 +20,8 @@ import { asyncHandler, testError } from 'Others/requestHandlers';
 // ------------------------------------------ COMPONENT-----------------------------------------
 function Home() : ReactElement {
   // ----------------------- hooks, const, props y states
-    const mockReqBody = {
-      products: [
-          {
-              porductID: '60aef3aee006fb21cdcf4d08',
-              sortIndex: 0
-          },
-          {
-              porductID: '60aef528e006fb84a5cf4d0b',
-              sortIndex: 1
-          },
-          {
-              porductID: '60aef4c8e006fb8b23cf4d0a',
-              sortIndex: 2
-          }
-      ]
-  }
   // Redux States
-  const { banners, paragraph, productsData } = useSelector(
+  const { banners, paragraph, productsData, products } = useSelector(
     (reducers: ReduxState) => reducers.homeReducer
   );
   const { isMovil } = useSelector((reducers: ReduxState) => reducers.appInfoReducer);
@@ -60,7 +44,7 @@ function Home() : ReactElement {
   function getProductsData() {
     if(paragraph && !productsData){
       isLoading(true);
-      asyncHandler(getHomeProducts, onSuccessProducts, onError, mockReqBody);
+      asyncHandler(getHomeProducts, onSuccessProducts, onError, {products});
     }  
   }
 
