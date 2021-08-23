@@ -10,8 +10,12 @@ import {
 
 const { Step } = Steps;
 
+interface Props {
+  isMovil: boolean;
+}
 // ------------------------------------------ COMPONENT-----------------------------------------
-function BuySteps () : React.ReactElement {
+function BuySteps ( props: Props ) : React.ReactElement {
+  const { isMovil } = props
   return (
     <>
       <h4 className="steps-title">
@@ -21,7 +25,7 @@ function BuySteps () : React.ReactElement {
         {' '}
         sencillos pasos
       </h4>
-      <Steps>
+      <Steps direction={isMovil ? 'vertical' : 'horizontal'}>
         <Step
           status="finish"
           title="Elige"

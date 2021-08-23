@@ -83,7 +83,7 @@ function Home() : ReactElement {
       <div className="home-container">
         <p>{paragraph || 'Cargando...'}</p>
         <Destacados productsData={productsData} />
-        <BuySteps />
+        <BuySteps isMovil={isMovil} />
         <ButtonProd />
       </div>
     </>
