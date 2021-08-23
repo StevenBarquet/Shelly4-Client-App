@@ -3,35 +3,11 @@ import { RandArray, RandObj } from '@Declarations'
 export const priceFormat = (number: number) : string => {
   if (typeof number !== 'number') return '0';
   // A partir de un int o float genera un string con formato de precio ($1,000.00)
-  let num = '';
-  num = number.toFixed(2);
-  num = number.toString(10);
-  const max = num.length;
+  const money = new Intl
+    .NumberFormat('en-IN', {style: 'currency', currency: 'USD'})
+    .format(number)
 
-  const comaIndex = max - 6;
-  const half1 = (str: string) => {
-    let cadena = '';
-    for (let i = 0; i < comaIndex; i++) {
-      cadena += str[i];
-    }
-    return cadena;
-  };
-  const half2 = (str: string) => {
-    let cadena = '';
-    for (let i = comaIndex; i < max; i++) {
-      cadena += str[i];
-    }
-    return cadena;
-  };
-
-  let finalNum;
-
-  if (num.length > 6) {
-    finalNum = '$' + half1(num) + ',' + half2(num);
-  } else {
-    finalNum = '$' + num;
-  }
-  return finalNum;
+  return money;
 };
 
 export const copyToEnd = (str: string, index: number ) : string => {
