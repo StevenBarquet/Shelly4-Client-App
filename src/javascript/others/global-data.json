@@ -3,6 +3,9 @@
     "pagesData": {
       "HomePage": {
         "title": "Inicio"
+      },
+      "ProductListPage": {
+        "title": "Productos"
       }
     },
     "menuRoutes": [
@@ -16,54 +19,6 @@
   },
   "catalogos":{
     "productos": {
-      "categoriasFiltro": [
-        {
-          "label": "Todas",
-          "value": null
-        },
-        {
-          "label": "Videojuegos",
-          "value": "Videojuegos"
-        },
-        {
-          "label": "Dulces",
-          "value": "Dulces"
-        },
-        {
-          "label": "Computo",
-          "value": "Computo"
-        },
-        {
-          "label": "Celular",
-          "value": "Celular"
-        },
-        {
-          "label": "Sublimado",
-          "value": "Sublimado"
-        }
-      ],
-      "categorias": [
-        {
-          "label": "Videojuegos",
-          "value": "Videojuegos"
-        },
-        {
-          "label": "Dulces",
-          "value": "Dulces"
-        },
-        {
-          "label": "Computo",
-          "value": "Computo"
-        },
-        {
-          "label": "Celular",
-          "value": "Celular"
-        },
-        {
-          "label": "Sublimado",
-          "value": "Sublimado"
-        }
-      ],
       "descuentoOptions": [
         {
           "label": "0%",

@@ -14,5 +14,57 @@
     "aclaracionPedido": "https://www.facebook.com/"
   },
   "appData":{
+  },
+  "catalogos":{
+    "productos": {
+      "categorias": [
+        {
+          "label": "Videojuegos",
+          "value": "Videojuegos"
+        },
+        {
+          "label": "Dulces",
+          "value": "Dulces"
+        },
+        {
+          "label": "Computo",
+          "value": "Computo"
+        },
+        {
+          "label": "Celular",
+          "value": "Celular"
+        },
+        {
+          "label": "Sublimado",
+          "value": "Sublimado"
+        }
+      ],
+      "categoriasFiltro": [
+        {
+          "label": "Todas",
+          "value": null
+        },
+        {
+          "label": "Videojuegos",
+          "value": "Videojuegos"
+        },
+        {
+          "label": "Dulces",
+          "value": "Dulces"
+        },
+        {
+          "label": "Computo",
+          "value": "Computo"
+        },
+        {
+          "label": "Celular",
+          "value": "Celular"
+        },
+        {
+          "label": "Sublimado",
+          "value": "Sublimado"
+        }
+      ]
+    }
   }
 }

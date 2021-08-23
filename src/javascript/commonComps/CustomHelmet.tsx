@@ -7,7 +7,7 @@ import { appData } from 'Others/global-data.json';
 
 // ------------------------------------------ TYPES-----------------------------------------
 interface Props {
-  pageName: 'HomePage';
+  pageName: 'HomePage' | 'ProductListPage';
 }
 // ------------------------------------------ COMPONENT-----------------------------------------
 function CustomHelmet (props: Props) : React.ReactElement {
