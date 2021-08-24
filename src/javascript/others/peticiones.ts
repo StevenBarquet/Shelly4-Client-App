@@ -43,3 +43,18 @@ export async function getHomeProducts(data: unknown) : Promise<AxiosHandler> {
     return error;
   }
 }
+// -------------------------------------------PRODUCTOS---------------------------------------
+export async function searchProducts(data: unknown) : Promise<AxiosHandler> {
+  const endpoint = 'client/productos/buscar';
+  const url = urlServer + endpoint;
+  try {
+    const respose = await axios(url, {
+      data,
+      method: 'post',
+      withCredentials: true
+    });
+    return respose;
+  } catch (error) {
+    return error;
+  }
+}
