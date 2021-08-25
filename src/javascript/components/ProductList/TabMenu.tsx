@@ -21,11 +21,14 @@ interface Props {
 // ------------------------------------------ COMPONENT-----------------------------------------
 function TabMenu (props: Props) : ReactElement {
   const { categorias } = catalogos.productos
+  const tabMenu = [
+    {}
+  ]
   return (
     <>
       <Tabs>
-        {categorias.map((category, index) => (
-          <TabPane tab={category.label} key={`${index}`}>
+        {categorias.map((category) => (
+          <TabPane tab={category.label} key={category.value}>
             {props.children}
           </TabPane>
           ))}

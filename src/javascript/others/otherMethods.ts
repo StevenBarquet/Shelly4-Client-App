@@ -209,3 +209,24 @@ export function getWordsArray(str: string) : Array<string> {
 export function makeWordsArray(str: Array<string>) : string {
   return str.join(' ');
 }
+export function stringToObject ( query: string) : RandObj | null {
+  /*
+      Parse string from this:
+          ?abc=foo&def=%5Basf%5D&xyz=5
+      To this:
+         {
+            abc: 'foo',
+            def: '[asf]',
+            xyz: 5
+          }
+ 
+  */
+
+  const isValid = /^(\?[a-zA-Z][a-zA-Z0-9_]+=[a-zA-Z0-9 %_]+)(&[a-zA-Z][a-zA-Z0-9_]+=[a-zA-Z0-9 %_]+)*$/i.test(query)
+
+  if(isValid){
+    const str = query.substr(1,query.length)
+    return JSON.parse('{"' + decodeURI(str).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+  }
+  return null
+}

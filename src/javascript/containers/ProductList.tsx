@@ -10,6 +10,8 @@ import TabMenu from 'Comp/ProductList/TabMenu';
 // --Request
 import { searchProducts } from 'Others/peticiones';
 import { asyncHandler, testError } from 'Others/requestHandlers';
+// ---Others
+import { stringToObject } from 'Others/otherMethods'
 
 const mockData = {
   pageNumber: 1,
@@ -28,6 +30,7 @@ function ProductList () : React.ReactElement {
   }
   function onSuccess(data: unknown) {
     console.log('currentParams ', currentParams)
+    console.log('stringToObject ', stringToObject(currentParams))
     console.log('request data: ', data)
     isLoading(false);
   }
