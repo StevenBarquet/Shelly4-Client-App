@@ -8,4 +8,7 @@ export const UPDATE_PARAMS = 'UPDATE_PARAMS';
 export const GET_PUBLIC_HOME = 'GET_PUBLIC_HOME';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 
+// ---productList
+export const UPDATE_SEARCH_PARAMS = 'UPDATE_SEARCH_PARAMS';
+
 export default null;

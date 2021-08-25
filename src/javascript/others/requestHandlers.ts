@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // ---Dependencys
 import { message } from 'antd';
 // ---Types

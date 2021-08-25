@@ -4,13 +4,14 @@ import React, { useEffect, ReactElement } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { saveHomeData, saveReduxProducts } from 'Actions/home';
 import { updateLoading } from 'Actions/appInfo';
-import { ReduxState } from 'Reducers';
-import { ReducerState as HomeData, Product } from '@Reducers/home/customTypes';
 // ---Components
 import DinamicCarousel from 'Comp/Home/DinamicCarousel';
 import BuySteps from 'Comp/Home/BuySteps';
 import ButtonProd from 'Comp/Home/ButtonProd';
 import Destacados from 'Comp/Home/Destacados';
+// ---Types
+import { ReduxState } from 'Reducers';
+import { ReducerState as HomeData, Product } from '@Reducers/home/customTypes';
 // ---Others
 import { ownerData } from 'Others/store-data.json';
 // --Request

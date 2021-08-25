@@ -1,26 +1,28 @@
 // -------------------------------------------TYPES------------------------------------
-import { GET_PUBLIC_HOME, GET_PRODUCTS } from 'Types';
-import {Action, ReducerState, Product} from './customTypes';
+import { UPDATE_SEARCH_PARAMS } from 'Types';
+import { Action, ReducerState, SearchParams } from '@Reducers/productList/customTypes';
 
 // -------------------------------------------STATE------------------------------------
 const INITIAL_STATE = {
+  searchParams: {
+    pageNumber: 1,
+    pageSize: 30,
+    categoria: 'Todos'
+  }
 };
 
 // ------------------------------------------REDUCER-----------------------------------
 export default (state = INITIAL_STATE, action: Action) : ReducerState => {
   const { type, payload } = action
   switch (type) {
-    case GET_PUBLIC_HOME:
+    case UPDATE_SEARCH_PARAMS:
       return {
         ...state,
-        ...<ReducerState>payload
+        searchParams: {
+          // ...state.searchParams,
+          ...<SearchParams>payload
+        }
       };
-
-    case GET_PRODUCTS:
-      return {
-        ...<ReducerState>state,
-        productsData: <Array<Product>>payload
-      }
 
     default:
       return <ReducerState>state;

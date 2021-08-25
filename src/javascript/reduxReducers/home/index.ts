@@ -1,6 +1,6 @@
 // -------------------------------------------TYPES------------------------------------
 import { GET_PUBLIC_HOME, GET_PRODUCTS } from 'Types';
-import {Action, ReducerState, Product} from './customTypes';
+import {Action, ReducerState, Product} from '@Reducers/home/customTypes';
 
 // -------------------------------------------STATE------------------------------------
 const INITIAL_STATE = {

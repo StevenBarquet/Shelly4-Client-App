@@ -37,10 +37,7 @@ module.exports = {
       'WithStatement',
     ],
     'no-use-before-define': 'off',
-    'no-unused-vars': [
-      1,
-      { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
-    ],
+    'no-unused-vars': 0,
     'prefer-const': [
       'error',
       {
@@ -127,7 +124,11 @@ module.exports = {
     'react-hooks/exhaustive-deps': 0,
     // Typescript
     '@typescript-eslint/no-use-before-define': ["error", { "functions": false, "classes": true, "variables": true }],
-    '@typescript-eslint/no-explicit-any': 0
+    '@typescript-eslint/no-explicit-any': 0,
+    "@typescript-eslint/no-unused-vars": [
+      1,
+      { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
+    ]
   },
   plugins: ['html', 'prettier', 'react-hooks'],
 };
