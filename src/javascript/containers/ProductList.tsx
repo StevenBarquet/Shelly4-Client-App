@@ -1,6 +1,5 @@
 // ---Dependencys
 import React, { useEffect } from 'react';
-import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 // ---Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,9 +13,9 @@ import MapProudcts from 'Comp/ProductList/MapProudcts';
 import { searchProducts } from 'Others/peticiones';
 import { asyncHandler, testError } from 'Others/requestHandlers';
 // ---Types
-import { SearchParams, ProductPayload } from '@Reducers/productList/customTypes'
+import { SearchParams, SearchParamsURL, ProductPayload } from '@Reducers/productList/customTypes'
 // ---Others
-import { stringToObject, removeEmptyAndNull } from 'Others/otherMethods'
+import { stringToObject, removeEmptyAndNull, objectToQueryString } from 'Others/otherMethods'
 import { validateSearchParams } from 'Others/validations'
 
 // ------------------------------------------ COMPONENT-----------------------------------------
@@ -24,7 +23,7 @@ function ProductList () : React.ReactElement {
   const history = useHistory();
   // Redux States
   const { currentParams } = useSelector((reducers: ReduxState) => reducers.appInfoReducer);
-  const { searchParams: reduxSearchParams, products } = useSelector((reducers: ReduxState) => reducers.productListReducer);
+  const { searchParams: reduxSearchParams, products, productCount } = useSelector((reducers: ReduxState) => reducers.productListReducer);
   // Redux Actions
   const dispatchR = useDispatch();
   const isLoading = (flag: boolean) => dispatchR(updateLoading(flag));
@@ -32,6 +31,7 @@ function ProductList () : React.ReactElement {
   const updateProducts = (data: ProductPayload) => dispatchR(updateReduxProducts(data));
   // useEffect
   useEffect(()=>{ updateSearch() },[currentParams])
+  useEffect(()=>{getData()},[reduxSearchParams])
   
   // -----------------------------MAIN METHODS--------------------------------
   function getData() {
@@ -48,15 +48,29 @@ function ProductList () : React.ReactElement {
       searchParamsAction(searchParams)
     }
   }
-
+  function onPageChange(page: number, pageSize?: number) {
+    const newSearchParams ={
+      ...reduxSearchParams,
+      pageNumber: page,
+      pageSize
+    }
+    const newParams = objectToQueryString(newSearchParams)
+    history.push(`/productos${newParams}`)
+  }
   // -----------------------------AUX METHODS--------------------------------
   function areValidParams() {
     console.log('currentParams ', currentParams)
-    const searchParams = stringToObject(currentParams)
+    let searchParams = stringToObject(currentParams)
     const { error } = validateSearchParams(searchParams)
     if(error){
       console.log('Wrong parms: ', error)
       return null
+    }
+    const {pageNumber, pageSize} = searchParams as unknown as SearchParamsURL
+    searchParams = {
+      ...searchParams,
+      pageNumber: pageNumber? parseInt(pageNumber, 10): 1,
+      pageSize: pageSize? parseInt(pageSize, 10): 30,
     }
     console.log('stringToObject ', searchParams)
     return searchParams as unknown as SearchParams
@@ -90,8 +104,14 @@ function ProductList () : React.ReactElement {
   return (
     <div className="products-cont">
       <TabMenu currentCat={reduxSearchParams.categoria} hystoryPush={hystoryPush}>
-        <Button type="primary" onClick={getData}>Call Products </Button>
-        <MapProudcts productsData={products} />
+        <MapProudcts
+          onPageChange={onPageChange}
+          current={reduxSearchParams.pageNumber}
+          pageSize={reduxSearchParams.pageSize}
+          productsData={products}
+          showSizeChanger
+          total={productCount}
+        />
       </TabMenu>
     </div>
   );

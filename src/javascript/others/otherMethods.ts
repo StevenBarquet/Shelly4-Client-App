@@ -232,3 +232,9 @@ export function stringToObject ( query: string) : RandObj | null {
   }
   return null
 }
+
+export function objectToQueryString(someObj: RandObj) : string {
+  const queryString = Object.keys(someObj).map(key => key + '=' + someObj[key]).join('&');
+
+  return `?${queryString}`
+}

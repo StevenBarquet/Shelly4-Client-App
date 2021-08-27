@@ -6,6 +6,18 @@ export interface SearchParams{
   descuento?: string;
   sortBy?: "{ \"nombre \": 1 }" |  "{ \"nombre \": -1 }" |  "{ \"marca\": 1 }" |  "{ \"marca\": -1 }" |  "{ \"precioOnline\": -1 }" |  "{ \"precioOnline\": 1 }" |  "{ \"countVisits\": 1 }" |  "{ \"countVisits\": -1 }" |  "{ \"countQuestions\": 1 }" |  "{ \"countQuestions\": -1 }" |  "{ \"countPurchases\": 1 }" |  "{ \"countPurchases\": -1 }";
 }
+export interface SearchParamsURL{
+  categoria: string;
+  pageNumber?: string;
+  pageSize?: string;
+  descuento?: string;
+  sortBy?: "{ \"nombre \": 1 }" |  "{ \"nombre \": -1 }" |  "{ \"marca\": 1 }" |  "{ \"marca\": -1 }" |  "{ \"precioOnline\": -1 }" |  "{ \"precioOnline\": 1 }" |  "{ \"countVisits\": 1 }" |  "{ \"countVisits\": -1 }" |  "{ \"countQuestions\": 1 }" |  "{ \"countQuestions\": -1 }" |  "{ \"countPurchases\": 1 }" |  "{ \"countPurchases\": -1 }";
+}
+
+export interface Pagination{
+  pageNumber: number;
+  pageSize: number;
+}
 
 export interface Product {
   _id: string;
@@ -30,5 +42,5 @@ export interface ReducerState {
 
 export interface Action {
   type: string;
-  payload: ReducerState | SearchParams | ProductPayload;
+  payload: ReducerState | SearchParams | ProductPayload | Pagination;
 }
