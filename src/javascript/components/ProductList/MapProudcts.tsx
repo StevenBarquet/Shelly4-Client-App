@@ -24,7 +24,7 @@ function MapProudcts(props: Props) : React.ReactElement | null {
     return (
       <div className="destacados-cont">
         <Row>
-          <Col xs={24} sm={24} lg={8}>
+          <Col xs={24} sm={24} lg={24}>
             <Pagination
               style={{ margin: '15px auto 0px auto' }}
               onShowSizeChange={onPageChange}
@@ -41,7 +41,7 @@ function MapProudcts(props: Props) : React.ReactElement | null {
           {productsData.map( producto => <ProductBox key={producto._id} producto={producto} />)}
         </Row>
         <Row>
-          <Col xs={24} sm={24} lg={8}>
+          <Col xs={24} sm={24} lg={24}>
             <Pagination
               style={{ margin: '15px auto 0px auto' }}
               onShowSizeChange={onPageChange}
