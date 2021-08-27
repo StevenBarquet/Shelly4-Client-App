@@ -6,9 +6,10 @@ import { ShoppingOutlined } from '@ant-design/icons';
 import ButtonMlg from 'Utils/ButtonMlg';
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-function ButtonProd (): React.ReactElement {
+function ButtonProd (props: { urlParams: string }): React.ReactElement {
+  const { urlParams } = props
   return (
-    <Link to="/productos">
+    <Link to={`/productos?${urlParams}`}>
       <div className="center-block">
         <ButtonMlg
           label="Ver catálogo ahora"

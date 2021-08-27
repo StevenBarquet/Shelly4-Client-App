@@ -3,6 +3,8 @@ import React, { useState, ReactElement } from 'react';
 import { MenuFoldOutlined, MenuOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'antd';
+// ---Others
+import { appData } from 'Others/store-data.json';
 
 // ---AUX COMPONENTS
 interface AuxProps1 {
@@ -22,7 +24,7 @@ function JustButtons(props: AuxProps1) {
         </Link>
       </Col>
       <Col xs={24} sm={24} lg={5}>
-        <Link to="/productos">
+        <Link to={`/productos?${appData.productsURL}`}>
           <div
             className={
               currentPath === '/productos' ? 'nav-btn nav-border' : 'nav-btn'

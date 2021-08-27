@@ -5,15 +5,16 @@ import { useHistory } from 'react-router-dom';
 // ---Redux
 import { useSelector, useDispatch } from 'react-redux';
 import { updateLoading } from 'Actions/appInfo';
-import { updateSearchParams } from 'Actions/productList';
+import { updateSearchParams, updateReduxProducts } from 'Actions/productList';
 import { ReduxState } from 'Reducers';
 // ---Components
 import TabMenu from 'Comp/ProductList/TabMenu';
+import MapProudcts from 'Comp/ProductList/MapProudcts';
 // --Request
 import { searchProducts } from 'Others/peticiones';
 import { asyncHandler, testError } from 'Others/requestHandlers';
 // ---Types
-import { SearchParams } from '@Reducers/productList/customTypes'
+import { SearchParams, ProductPayload } from '@Reducers/productList/customTypes'
 // ---Others
 import { stringToObject, removeEmptyAndNull } from 'Others/otherMethods'
 import { validateSearchParams } from 'Others/validations'
@@ -23,11 +24,12 @@ function ProductList () : React.ReactElement {
   const history = useHistory();
   // Redux States
   const { currentParams } = useSelector((reducers: ReduxState) => reducers.appInfoReducer);
-  const { searchParams: reduxSearchParams } = useSelector((reducers: ReduxState) => reducers.productListReducer);
+  const { searchParams: reduxSearchParams, products } = useSelector((reducers: ReduxState) => reducers.productListReducer);
   // Redux Actions
   const dispatchR = useDispatch();
   const isLoading = (flag: boolean) => dispatchR(updateLoading(flag));
   const searchParamsAction = (searchParams: SearchParams) => dispatchR(updateSearchParams(searchParams));
+  const updateProducts = (data: ProductPayload) => dispatchR(updateReduxProducts(data));
   // useEffect
   useEffect(()=>{ updateSearch() },[currentParams])
   
@@ -51,7 +53,7 @@ function ProductList () : React.ReactElement {
   function areValidParams() {
     console.log('currentParams ', currentParams)
     const searchParams = stringToObject(currentParams)
-    const { error } = validateSearchParams(searchParams || {})
+    const { error } = validateSearchParams(searchParams)
     if(error){
       console.log('Wrong parms: ', error)
       return null
@@ -59,8 +61,9 @@ function ProductList () : React.ReactElement {
     console.log('stringToObject ', searchParams)
     return searchParams as unknown as SearchParams
   }
-  function onSuccess(data: unknown) {
+  function onSuccess(data: ProductPayload) {
     console.log('request data: ', data)
+    updateProducts(data)
     isLoading(false);
   }
 
@@ -69,7 +72,7 @@ function ProductList () : React.ReactElement {
     isLoading(false);
   }
   function fitDataToRequest() {
-    const { categoria, descuento, marca, nombre, precioOnline,countVisits, countQuestions, countPurchases } = reduxSearchParams
+    const { categoria, descuento, sortBy } = reduxSearchParams
     const catValidation = categoria === 'Todos' || categoria === 'Buscar'
     const fixedData = {
       ...reduxSearchParams,
@@ -79,20 +82,7 @@ function ProductList () : React.ReactElement {
       },
       categoria: null,
       descuento: null,
-      sortBy: {
-        marca,
-        nombre,
-        precioOnline,
-        countVisits,
-        countQuestions,
-        countPurchases
-      },
-      marca: null,
-      nombre: null,
-      precioOnline: null,
-      countVisits: null,
-      countQuestions: null,
-      countPurchases: null
+      sortBy: sortBy? JSON.parse(sortBy) : null
     }
     return removeEmptyAndNull(fixedData)
   }
@@ -100,8 +90,8 @@ function ProductList () : React.ReactElement {
   return (
     <div className="products-cont">
       <TabMenu currentCat={reduxSearchParams.categoria} hystoryPush={hystoryPush}>
-        <div>cosassssssss</div>
         <Button type="primary" onClick={getData}>Call Products </Button>
+        <MapProudcts productsData={products} />
       </TabMenu>
     </div>
   );

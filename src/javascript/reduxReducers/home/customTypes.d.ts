@@ -26,7 +26,6 @@ export interface Product {
   disponibles: number;
   categoria: Array<string>;
   images: Images;
-
 }
 
 export interface ReducerState {

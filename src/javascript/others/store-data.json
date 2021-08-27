@@ -14,6 +14,7 @@
     "aclaracionPedido": "https://www.facebook.com/"
   },
   "appData":{
+    "productsURL": "categoria=Todos"
   },
   "catalogos":{
     "productos": {

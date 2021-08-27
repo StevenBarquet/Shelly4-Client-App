@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 // ---Dependencys
 import Joi from 'joi';
 // ---Other
@@ -8,30 +9,28 @@ export function validateSearchParams( data: unknown ) : Joi.ValidationResult {
 
   const validCategories = tabMenu.map( element => element.value )
 
+  const validSorts = [
+    "{ \"nombre \": 1 }",
+    "{ \"nombre \": -1 }",
+    "{ \"marca\": 1 }",
+    "{ \"marca\": -1 }",
+    "{ \"precioOnline\": -1 }",
+    "{ \"precioOnline\": 1 }",
+    "{ \"countVisits\": 1 }",
+    "{ \"countVisits\": -1 }",
+    "{ \"countQuestions\": 1 }",
+    "{ \"countQuestions\": -1 }",
+    "{ \"countPurchases\": 1 }",
+    "{ \"countPurchases\": -1 }"
+  ]
+
   const schema = Joi.object({
     pageNumber: Joi.number().integer(),
     pageSize: Joi.number().integer(),
     searchedValue: Joi.string().min(3).max(18),
     categoria: Joi.string().valid(...validCategories).required(),
     descuento: Joi.string().valid('true', 'false'),
-    marca: Joi.number().integer()
-        .min(-1)
-        .max(1),
-    nombre: Joi.number().integer()
-      .min(-1)
-      .max(1),
-    precioOnline: Joi.number().integer()
-      .min(-1)
-      .max(1),
-    countVisits: Joi.number().integer()
-      .min(-1)
-      .max(1),
-    countQuestions: Joi.number().integer()
-      .min(-1)
-      .max(1),
-    countPurchases: Joi.number().integer()
-      .min(-1)
-      .max(1)
+    sortBy: Joi.string().valid(...validSorts),
   })
   return schema.validate(data)
 }

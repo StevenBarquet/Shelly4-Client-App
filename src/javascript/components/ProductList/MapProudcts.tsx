@@ -12,18 +12,17 @@ interface Props {
   productsData?: Array<Product>;
 }
 // ------------------------------------------ COMPONENT-----------------------------------------
-function Destacados(props: Props) : React.ReactElement | null {
+function MapProudcts(props: Props) : React.ReactElement | null {
   const { productsData } = props
   if(productsData && productsData.length> 0)
     return (
       <div className="destacados-cont">
-        <h1>Destacados</h1>
         <Row>
           {productsData.map( producto => <ProductBox key={producto._id} producto={producto} />)}
         </Row>
       </div>
     );
-  return null
+  return <p>Busqueda sin resultados</p>
 }
 
-export default Destacados;
+export default MapProudcts;

@@ -210,9 +210,11 @@ export function makeWordsArray(str: Array<string>) : string {
   return str.join(' ');
 }
 export function stringToObject ( query: string) : RandObj | null {
+  console.log('validating: ', query);
   /*
       Parse string from this:
           ?abc=foo&def=%5Basf%5D&xyz=5
+          ?categoria=Videojuegos&searchedValue=%27{%20%22date%22:%20-1%20}%27
       To this:
          {
             abc: 'foo',
@@ -222,7 +224,7 @@ export function stringToObject ( query: string) : RandObj | null {
  
   */
 
-  const isValid = /^(\?[a-zA-Z][a-zA-Z0-9_]+=[a-zA-Z0-9 %_]+)(&[a-zA-Z][a-zA-Z0-9_]+=[a-zA-Z0-9 %_]+)*$/i.test(query)
+  const isValid = /^(\?[a-zA-Z][a-zA-Z0-9_]+=[a-zA-Z0-9 %_:{}-]+)(&[a-zA-Z][a-zA-Z0-9_]+=[a-zA-Z0-9 %_:{}-]+)*$/i.test(query)
 
   if(isValid){
     const str = query.substr(1,query.length)

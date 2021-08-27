@@ -1,7 +1,7 @@
 // -------------------------------------------TYPES------------------------------------
-import { UPDATE_SEARCH_PARAMS } from 'Types';
+import { UPDATE_SEARCH_PARAMS, UPDATE_SEARCH_PRODUCTS } from 'Types';
 import { Dispatch } from 'redux'
-import { SearchParams } from '@Reducers/productList/customTypes';
+import { SearchParams, ProductPayload } from '@Reducers/productList/customTypes';
 
 export const updateSearchParams = (params: SearchParams) => (dispatch: Dispatch) : void => {
   const { pageSize, pageNumber } = params
@@ -13,5 +13,12 @@ export const updateSearchParams = (params: SearchParams) => (dispatch: Dispatch)
   dispatch({
     type: UPDATE_SEARCH_PARAMS,
     payload: fixedPagination
+  });
+};
+
+export const updateReduxProducts = (data: ProductPayload) => (dispatch: Dispatch) : void => {
+  dispatch({
+    type: UPDATE_SEARCH_PRODUCTS,
+    payload: data
   });
 };

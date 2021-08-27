@@ -93,7 +93,7 @@ function ProductBox(props: Props) : React.ReactElement {
 
   return (
     <Col xs={24} sm={24} lg={8}>
-      <Link to={'/item=' + _id}>
+      <Link to={'/item?id=' + _id}>
         <div className="product-box-container">
           <FitImg
             srcImg={images.cover}
