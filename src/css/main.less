@@ -1,3 +1,9 @@
+//----------------------------------------------OTHERS---------------------------------------------
+.png-button{
+  width: 100px;
+  margin: 10px auto 10px auto;
+  display: block;
+}
 //----------------------------------------------Nav-----------------------------------------------
 .nav-div{
   width: 100%;
@@ -270,5 +276,121 @@
   }
   svg{
     font-size: 40px;
+  }
+}
+// ------------------------------------------PRODUCT DETAIL-----------------------------------
+.product-container{
+  // ---Box model
+  width: 94%;
+  margin: 10px auto 10px auto;
+  h1{
+    padding: 0px 20px 0px 20px;
+    span{
+      color: @colorSecundaryText;
+    }
+  }
+  h2 {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: @colorPrimary;
+    font-size: 20px;
+    padding: 4px 14px 0px 14px;
+
+  }
+  h2:before, h2:after {
+      position: absolute;
+      top: 51%;
+      overflow: hidden;
+      width: 40%;
+      height: 1px;
+      content: '\a0';
+      background-color: @colorLightDark;
+      margin-left: 1.7%;
+  }
+  h2:before {
+      margin-left: -42%;
+      text-align: right;
+  }
+  h5{
+    padding-left: 20px;
+    margin-top: -20px;
+    font-size: 15px;
+    font-weight: bolder;
+  }
+  aside{
+    margin: 4px;
+  }
+  section{
+    margin: 4px;
+    aside{
+      color: @colorPrimary;
+      text-decoration: line-through;
+      text-decoration-color: @colorPrimary;
+      font-size: 18px;
+      height: auto;
+      background-color: transparent;
+    }
+    section{
+      border: unset;
+      font-size: 21px;
+      color: @colorFiveLigth;
+    }
+  }
+  h3{ // label Info style
+    margin: 4px;
+    color: @colorSecundaryTextLigth;
+    span{
+      margin-left: 4px;
+      color: @colorPrimaryText;
+      font-weight: bolder;
+      &.danger{
+        color: @colorError;
+        font-weight: bolder;
+        font-size: 20px;
+        margin-left: 4px;
+      }
+    }
+  }
+  // Normal price Style
+  h4{
+    padding: 4px 4px 4px 20px;
+    font-size: 20px;
+    color: @colorFiveLigthter;
+  }
+  article{
+    margin: 4px;
+    white-space: pre-line;
+    padding: 10px;
+  }
+  h6 {
+    text-align: center;
+    color: @colorPrimaryText;
+    font-size: 18px;
+    padding: 4px;
+    width: 100%;
+    span{
+      font-size: 20px;
+      font-weight: bolder;
+      color: @colorPrimary;
+      margin-right: 5px;
+    }
+  }
+}
+//-------------------------------------------TEMPORAL-------------------------------------------
+.cover-cont{
+  border: 1px solid @color_darkLigth;  
+  margin: 4px auto 4px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: @colorWhite;
+  &-small{
+    width: 80px;
+    height: 80px;
+  }
+  &-big{
+    width: 380px;
+    height: 380px;
   }
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 // ---Types
 import { AxiosHandler } from '@Declarations';
 // ---Others
-import { ownerData } from 'Others/store-data.json';
+import { ownerData } from 'Others/store-config';
 
 const envType = process.env.NODE_ENV;
 
@@ -21,7 +21,7 @@ export async function getHomePublic() : Promise<AxiosHandler> {
   try {
     const respose = await axios(url, {
       method: 'get',
-      withCredentials: true
+      withCredentials: false
     });
     return respose;
   } catch (error) {
@@ -36,7 +36,7 @@ export async function getHomeProducts(data: unknown) : Promise<AxiosHandler> {
     const respose = await axios(url, {
       method: 'post',
       data,
-      withCredentials: true
+      withCredentials: false
     });
     return respose;
   } catch (error) {
@@ -51,7 +51,21 @@ export async function searchProducts(data: unknown) : Promise<AxiosHandler> {
     const respose = await axios(url, {
       data,
       method: 'post',
-      withCredentials: true
+      withCredentials: false
+    });
+    return respose;
+  } catch (error) {
+    return error;
+  }
+}
+// -------------------------------------------DETALLE P---------------------------------------
+export async function getProductRequest(id: string | unknown) : Promise<AxiosHandler> {
+  const endpoint = `client/productos/${id as string}`;
+  const url = urlServer + endpoint;
+  try {
+    const respose = await axios(url, {
+      method: 'get',
+      withCredentials: false
     });
     return respose;
   } catch (error) {

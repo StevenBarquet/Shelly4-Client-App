@@ -13,7 +13,7 @@ import Destacados from 'Comp/Home/Destacados';
 import { ReduxState } from 'Reducers';
 import { ReducerState as HomeData, Product } from '@Reducers/home/customTypes';
 // ---Others
-import { ownerData, appData } from 'Others/store-data.json';
+import { ownerData, appConfig } from 'Others/store-config';
 // --Request
 import { getHomePublic, getHomeProducts } from 'Others/peticiones';
 import { asyncHandler, testError } from 'Others/requestHandlers';
@@ -85,7 +85,7 @@ function Home() : ReactElement {
         <p>{paragraph || 'Cargando...'}</p>
         <Destacados productsData={productsData} />
         <BuySteps isMovil={isMovil} />
-        <ButtonProd urlParams={appData.productsURL} />
+        <ButtonProd urlParams={appConfig.productsURL} />
       </div>
     </>
   );

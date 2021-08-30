@@ -2,17 +2,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 // ---Others
-import { ownerData } from 'Others/store-data.json';
-import { appData } from 'Others/global-data.json';
+import { ownerData } from 'Others/store-config';
+import { pagesData } from 'Others/global-data';
 
 // ------------------------------------------ TYPES-----------------------------------------
 interface Props {
-  pageName: 'HomePage' | 'ProductListPage';
+  pageName: 'HomePage' | 'ProductListPage' | 'ProductDetailPage' | 'TrackerPage';
 }
 // ------------------------------------------ COMPONENT-----------------------------------------
 function CustomHelmet (props: Props) : React.ReactElement {
   const { pageName } = props;
-  const { pagesData } = appData;
   const { title } = ownerData;
   const name = pagesData[pageName].title;
   return (

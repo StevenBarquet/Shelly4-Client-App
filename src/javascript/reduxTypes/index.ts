@@ -11,6 +11,8 @@ export const GET_PRODUCTS = 'GET_PRODUCTS';
 // ---productList
 export const UPDATE_SEARCH_PARAMS = 'UPDATE_SEARCH_PARAMS';
 export const UPDATE_SEARCH_PRODUCTS = 'UPDATE_SEARCH_PRODUCTS';
-export const UPDATE_SEARCH_PAGINATION = 'UPDATE_SEARCH_PAGINATION';
+
+// ---productDetail
+export const UPDATE_PRODUCT_DETAIL = 'UPDATE_PRODUCT_DETAIL';
 
 export default null;

@@ -210,7 +210,6 @@ export function makeWordsArray(str: Array<string>) : string {
   return str.join(' ');
 }
 export function stringToObject ( query: string) : RandObj | null {
-  console.log('validating: ', query);
   /*
       Parse string from this:
           ?abc=foo&def=%5Basf%5D&xyz=5

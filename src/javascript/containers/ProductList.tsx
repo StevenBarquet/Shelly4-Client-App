@@ -59,11 +59,9 @@ function ProductList () : React.ReactElement {
   }
   // -----------------------------AUX METHODS--------------------------------
   function areValidParams() {
-    console.log('currentParams ', currentParams)
     let searchParams = stringToObject(currentParams)
     const { error } = validateSearchParams(searchParams)
     if(error){
-      console.log('Wrong parms: ', error)
       return null
     }
     const {pageNumber, pageSize} = searchParams as unknown as SearchParamsURL
@@ -72,11 +70,9 @@ function ProductList () : React.ReactElement {
       pageNumber: pageNumber? parseInt(pageNumber, 10): 1,
       pageSize: pageSize? parseInt(pageSize, 10): 30,
     }
-    console.log('stringToObject ', searchParams)
     return searchParams as unknown as SearchParams
   }
   function onSuccess(data: ProductPayload) {
-    console.log('request data: ', data)
     updateProducts(data)
     isLoading(false);
   }

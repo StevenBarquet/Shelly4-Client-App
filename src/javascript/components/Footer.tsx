@@ -8,7 +8,7 @@ import {
   InstagramOutlined
 } from '@ant-design/icons';
 // ---Others
-import { ownerData } from 'Others/store-data.json';
+import { ownerData } from 'Others/store-config';
 
 const { title, phoneStr, phoneMain, facebookUrl, instagramUrl } = ownerData
 

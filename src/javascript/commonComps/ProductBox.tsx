@@ -4,32 +4,12 @@ import { Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
 // ---Components
 import FitImg from 'Utils/FitImg';
+// ---CommonComps
+import TitleStyler from 'CComps/TitleStyler';
 // ---Types
 import { Product } from '@Reducers/home/customTypes';
 // ---Others
-import { getWordsArray, makeWordsArray, priceFormat } from 'Others/otherMethods'
-
-// ---aux
-function TitleParse(props: { someTitle: string}) {
-  const { someTitle } = props
-  const wordsArray = getWordsArray(someTitle);
-  if(wordsArray.length > 1){
-    const firstWord = wordsArray[0]
-    const otherWordsArray = wordsArray.splice(1, wordsArray.length)
-    const otherWords = makeWordsArray(otherWordsArray)
-    return (
-      <>
-        <span>{firstWord}</span>
-        {` ${otherWords}`}
-      </>
-    )
-  }
-  return (
-    <>
-      {someTitle}
-    </>
-  )
-}
+import { priceFormat } from 'Others/otherMethods'
 
 function PriceBox (props: {precioOnline: number, descuento: number}) {
   const { precioOnline, descuento} = props
@@ -92,16 +72,16 @@ function ProductBox(props: Props) : React.ReactElement {
   } = producto;
 
   return (
-    <Col xs={24} sm={24} lg={8}>
-      <Link to={'/item?id=' + _id}>
-        <div className="product-box-container">
+    <Col xs={24} sm={16} md={12} lg={8} xl={8} xxl={6}>
+      <div className="product-box-container">
+        <Link to={'/item?id=' + _id}>
           <FitImg
             srcImg={images.cover}
             estilo="product-box-img-container"
             alt={nombre}
           />
           <h5>
-            <TitleParse someTitle={nombre} />
+            <TitleStyler someTitle={nombre} />
           </h5>
           <section>
             <Row>
@@ -113,9 +93,9 @@ function ProductBox(props: Props) : React.ReactElement {
             <span>{` ${disponibles}`}</span>
           </div>
           <div className="product-box-belt">{categoria[0]}</div>
-        </div>
+        </Link>
         <PromoBox descuento={descuento} />
-      </Link>
+      </div>
     </Col>
   );
 }

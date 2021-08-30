@@ -5,7 +5,7 @@ import Titulo from 'Comp/Error404/Titulo';
 import Cuerpo from 'Comp/Error404/Cuerpo';
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-function Error404Cont() {
+function Error404Cont() : React.ReactElement {
   return (
     <>
       <Titulo />

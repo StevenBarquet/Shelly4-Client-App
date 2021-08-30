@@ -20,3 +20,7 @@ export interface ResponseStandar {
   error?: AxiosError<any>;
 }
 export type RouteAsyncMethod = () => Promise<ResponseStandar>
+
+export interface IDParamsBody {
+  id: string
+}

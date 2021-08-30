@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingOutlined } from '@ant-design/icons';
-// ---ComonComponents
+// ---Utils
 import ButtonMlg from 'Utils/ButtonMlg';
 
 // ------------------------------------------ COMPONENT-----------------------------------------

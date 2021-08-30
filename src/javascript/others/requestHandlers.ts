@@ -17,15 +17,15 @@ export function testError(response: unknown) : null {
   return null;
 }
 // ------------------------------------------ TYPES-----------------------------------------
-type ReqFunc = (requestData: unknown ) => Promise<AxiosHandler>;
+type ReqFunc = (requestData?: string | unknown ) => Promise<AxiosHandler>;
 type SuccessFunc = (successData1?: any, successData2?: unknown ) => any;
-type RejectFunc = (requestData: unknown ) => any;
+type RejectFunc = (requestData?: unknown | string ) => any;
 // ------------------------------------------ MAIN-----------------------------------------
 export function asyncHandler(
   requestFunction: ReqFunc,
   successFunction: SuccessFunc,
   rejectFunction: RejectFunc,
-  requestData?: unknown,
+  requestData?: string | unknown,
   successData?: unknown
 ) : void {
   requestFunction(requestData || null).then(res => {

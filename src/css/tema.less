@@ -16,9 +16,11 @@ button, input[type="submit"], input[type="reset"] {
   }
 body {
   background-color: @backgroundFallBack1;
-  background-image: @backgroundImage1;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: @backgroundImage1 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: 'Questrial';
   margin: 0px;
   padding: 0px;

@@ -1,7 +1,7 @@
 // ---Dependencys
 import React from 'react';
 import { Row } from 'antd';
-// ---Components
+// ---CommonComps
 import ProductBox from 'CComps/ProductBox';
 // ---Types
 import { Product } from '@Reducers/home/customTypes';

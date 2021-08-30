@@ -1,4 +1,4 @@
-/* eslint-disable quotes */
+/* eslint-disable @typescript-eslint/quotes */
 // ---Dependencys
 import Joi from 'joi';
 // ---Other
@@ -31,6 +31,13 @@ export function validateSearchParams( data: unknown ) : Joi.ValidationResult {
     categoria: Joi.string().valid(...validCategories).required(),
     descuento: Joi.string().valid('true', 'false'),
     sortBy: Joi.string().valid(...validSorts),
+  })
+  return schema.validate(data)
+}
+
+export function validateJustIdParam( data: unknown ) : Joi.ValidationResult {
+  const schema = Joi.object({
+    id: Joi.string().pattern(/^[0-9a-fA-F]{24}$/).required(),
   })
   return schema.validate(data)
 }

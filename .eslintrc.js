@@ -26,6 +26,7 @@ module.exports = {
     ReturnType: "readonly"
   },
   rules: {
+    // Javascript
     'no-debugger': 0,
     'no-alert': 0,
     'no-await-in-loop': 0,
@@ -45,12 +46,7 @@ module.exports = {
       },
     ],
     'arrow-body-style': [0, 'as-needed'],
-    'no-unused-expressions': [
-      2,
-      {
-        allowTaggedTemplates: true,
-      },
-    ],
+    'no-unused-expressions': 0,
     'no-param-reassign': [
       2,
       {
@@ -60,7 +56,7 @@ module.exports = {
     'no-console': 0,
     'no-plusplus': 0,
     'import/prefer-default-export': 0,
-    import: 0,
+    'import': 0,
     'import/no-unresolved': 0,
     'import/no-extraneous-dependencies': 0,
     'func-names': 0,
@@ -91,21 +87,8 @@ module.exports = {
       },
     ],
     radix: 0,
-    'no-shadow': [
-      2,
-      {
-        hoist: 'all',
-        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error']
-      },
-    ],
-    quotes: [
-      2,
-      'single',
-      {
-        avoidEscape: true,
-        allowTemplateLiterals: true,
-      },
-    ],
+    'no-shadow': 0,
+    'quotes': 0,
     'prettier/prettier': [
       0,
       {
@@ -122,13 +105,37 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 0,
+
     // Typescript
     '@typescript-eslint/no-use-before-define': ["error", { "functions": false, "classes": true, "variables": true }],
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/comma-dangle': 0,
+    '@typescript-eslint/space-before-function-paren': 0,
+    '@typescript-eslint/no-unused-expressions': [
+      2,
+      {
+        allowTaggedTemplates: true,
+      },
+    ],
+    '@typescript-eslint/no-shadow': [
+      2,
+      {
+        hoist: 'all',
+        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error']
+      },
+    ],
+    '@typescript-eslint/quotes': [
+      2,
+      'single',
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true,
+      },
+    ],
     "@typescript-eslint/no-unused-vars": [
       1,
       { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
     ]
   },
-  plugins: ['html', 'prettier', 'react-hooks'],
+  plugins: ['html', 'prettier', 'react-hooks', 'jsx-a11y'],
 };
