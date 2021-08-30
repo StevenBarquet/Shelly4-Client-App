@@ -27,3 +27,5 @@ export const categoriasFiltro = [
 export const tabMenu = [
   {label: 'Todos', value: 'Todos'}, ...categorias, {label: 'Buscar', value: 'Buscar'}
 ]
+
+export const proxy = 'ignore this'
