@@ -51,8 +51,8 @@ function ImagesWidget (props: Props): React.ReactElement | null{
   };
   return (
     <Row>
-      <Col sm={6}>{mapExtraImages()}</Col>
-      <Col sm={18}>
+      <Col span={3}>{mapExtraImages()}</Col>
+      <Col span={21}>
         <FitImg srcImg={main} estilo="cover-cont cover-cont-big" alt={nombre} />
       </Col>
     </Row>
