@@ -1,14 +1,14 @@
 export default null;
 
 export const ownerData = {
-  domain: 'shelly-store.com',
+  domain: 'stevedevops-shop.com',
   title: {
-    main: 'Shelly',
-    sub: 'store',
-    shortStoreName: 'Shelly'
+    main: 'SteveDevOps',
+    sub: 'shop',
+    shortStoreName: 'SteveDevOps'
   },
-  phoneStr: '55 3402 6751',
-  phoneMain: 5534026751,
+  phoneStr: '55 3370 0670',
+  phoneMain: 5533700670,
   facebookUrl: 'https://www.facebook.com/SHELLYstore.boot',
   contactLink: 'http://m.me/SHELLYstore.boot',
   instagramUrl: 'https://www.instagram.com/',
