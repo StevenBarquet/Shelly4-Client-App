@@ -1,14 +1,14 @@
 export default null;
 
 export const ownerData = {
-  domain: 'shelly-store.com',
+  domain: 'stevedevops-shop.com',
   title: {
-    main: 'Shelly',
-    sub: 'store',
-    shortStoreName: 'Shelly'
+    main: 'SteveDevOps',
+    sub: 'shop',
+    shortStoreName: 'SteveDevOps'
   },
-  phoneStr: '55 3402 6751',
-  phoneMain: 5534026751,
+  phoneStr: '55 3370 0670',
+  phoneMain: 5533700670,
   facebookUrl: 'https://www.facebook.com/SHELLYstore.boot',
   contactLink: 'http://m.me/SHELLYstore.boot',
   instagramUrl: 'https://www.instagram.com/',
@@ -19,24 +19,32 @@ export const appConfig = {
   productsURL: 'categoria=Todos',
   categorias: [
     {
-      label: 'Videojuegos',
-      value: 'Videojuegos'
+      label: 'Mouse y teclados',
+      value: 'Mouse y teclados'
     },
     {
-      label: 'Dulces',
-      value: 'Dulces'
+      label: 'Audio',
+      value: 'Audio'
     },
     {
-      label: 'Computo',
-      value: 'Computo'
+      label: 'Telefonía',
+      value: 'Telefonía'
     },
     {
-      label: 'Celular',
-      value: 'Celular'
+      label: 'Almacenamiento',
+      value: 'Almacenamiento'
     },
     {
-      label: 'Sublimado',
-      value: 'Sublimado'
+      label: 'Consolas y juegos',
+      value: 'Consolas y juegos'
+    },
+    {
+      label: 'Cómputo',
+      value: 'Cómputo'
+    },
+    {
+      label: 'Random',
+      value: 'Random'
     }
   ]
 }
