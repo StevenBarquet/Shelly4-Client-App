@@ -4,10 +4,10 @@ import React from 'react';
 import FBLogo from 'Images/messenger.png';
 import { ownerData } from 'Others/store-config';
 
-const { domain, facebookUrl } = ownerData
+const { domain, facebookUrl } = ownerData;
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-function ButtonFB () : React.ReactElement {
+function ButtonFB() : React.ReactElement {
   return (
     <button
       type="button"

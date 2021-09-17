@@ -8,7 +8,7 @@ import Error404Cont from 'Cont/Error404Cont';
 const Error404Page = () => (
   <>
     <Helmet>
-      <title>Ups 404</title>
+      <title>Ups! Error 404</title>
     </Helmet>
     <Error404Cont />
   </>
