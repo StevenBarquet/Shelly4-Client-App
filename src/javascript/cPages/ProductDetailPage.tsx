@@ -6,13 +6,11 @@ import ProductDetail from 'Cont/ProductDetail';
 import CustomHelmet from 'CComps/CustomHelmet';
 
 // ------------------------------------------ COMPONENT-----------------------------------------
-const ProductDetailPage = () : React.ReactElement => {
+export default function ProductDetailPage() {
   return (
     <>
       <CustomHelmet pageName="ProductDetailPage" />
       <ProductDetail />
     </>
   );
-};
-
-export default ProductDetailPage;
+}

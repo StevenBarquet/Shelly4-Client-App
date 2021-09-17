@@ -4,6 +4,73 @@
   margin: 10px auto 10px auto;
   display: block;
 }
+//--------------------------CONUNT DOWN
+.date-box{
+  section{
+    // Box model
+    margin-top: 15px;
+    margin-left: 4px;
+    background-color: @colorTransparentGrey;
+    height: 140px;
+    min-width: 100px;
+    max-width: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // Content
+    text-align: center;
+    font-size: 62px;
+    font-weight: bold;
+  }
+  span{
+    // Box model
+    margin-top: 8px;
+    margin-left: 4px;
+    background-color: @colorTransparentGrey;
+    height: 30px;
+    min-width: 100px;
+    max-width: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // Content
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &-movil{
+    section{
+      // Box model
+      margin-top: 15px;
+      margin-left: 4px;
+      background-color: @colorTransparentGrey;
+      height: 140px;
+      min-width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // Content
+      text-align: center;
+      font-size: 54px;
+      font-weight: bold;
+    }
+    span{
+      // Box model
+      margin-top: 8px;
+      margin-left: 4px;
+      background-color: @colorTransparentGrey;
+      height: 30px;
+      min-width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // Content
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}
 //----------------------------------------------Nav-----------------------------------------------
 .nav-div{
   width: 100%;
@@ -392,5 +459,35 @@
   &-big{
     width: 380px;
     height: 380px;
+  }
+}
+//---------------------------------------IN DEVELOPMENT PAGE---------------------------------------
+.in-dev-page{
+  padding: 25px;
+  h1{
+    color: @colorPrimaryText;
+    text-align: center;
+    font-size: 38px;
+  }
+  h2{
+    margin-top: -10px;
+    color: @colorPrimary;
+    line-height: 100%;
+    text-align: center;
+  }
+  p{
+    color: @colorSecundaryText;
+    text-align: start;
+    font-size: 20px;
+    span{
+      color: @colorPrimaryText;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+  img{
+    width: 80%;
+    display: block;
+    margin: 10px auto 10px auto;
   }
 }

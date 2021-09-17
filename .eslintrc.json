@@ -1,0 +1,57 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "settings": {
+        "react": {
+            "createClass": "createReactClass", // Regex for Component Factory to use,
+                                         // default to "createReactClass"
+            "pragma": "React",  // Pragma to use, default to "React"
+            "fragment": "Fragment",  // Fragment to use (may be a property of <pragma>), default to "Fragment"
+            "version": "detect" // React version. "detect" automatically picks the version you have installed.
+                                // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+                                // default to latest and warns if missing
+        },
+        "import/resolver": {
+            "typescript": {}
+          }
+    },
+    "rules": {
+        // Javascript
+        "no-unused-vars": "off",
+        "no-use-before-define": "off",
+        "import/no-unresolved": "off",
+        "import/named": "off",
+        "import/no-duplicates": "off",
+        "import/order": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/no-self-import": "off",
+        "import/no-cycle": "off",
+        "import/no-named-as-default": "off",
+        "import/no-named-as-default-member": "off",
+        "comma-dangle": ["error", "never"],
+        "react/jsx-props-no-spreading": "off",
+        // Typescript
+        "import/extensions": "off",
+        "react/jsx-filename-extension": [ 1, { "extensions": [".js", ".jsx", ".ts", ".tsx"]}],
+        "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": true, "variables": true }],
+        "@typescript-eslint/no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+    }
+}
